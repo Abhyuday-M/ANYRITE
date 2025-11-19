@@ -1,0 +1,536 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Space+Mono:wght@400;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Space Mono', monospace;
+  background: #FFE66D;
+  color: #000;
+  overflow-x: hidden;
+}
+
+.App {
+  min-height: 100vh;
+}
+
+/* Navbar */
+.navbar {
+  background: #FF6B6B;
+  border-bottom: 4px solid #000;
+  padding: 1rem 0;
+  box-shadow: 8px 8px 0 #000;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.navbar-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-logo {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 1.5rem;
+  color: #000;
+  text-decoration: none;
+  text-shadow: 3px 3px 0 #4ECDC4;
+  transition: transform 0.2s;
+}
+
+.navbar-logo:hover {
+  transform: translate(-2px, -2px);
+  text-shadow: 5px 5px 0 #4ECDC4;
+}
+
+.navbar-actions {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+/* Main Container */
+.main-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+}
+
+/* Neo-Brutalism Buttons */
+.neo-button {
+  background: #4ECDC4;
+  color: #000;
+  border: 4px solid #000;
+  padding: 0.75rem 1.5rem;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  cursor: pointer;
+  box-shadow: 6px 6px 0 #000;
+  transition: all 0.2s;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.neo-button:hover:not(:disabled) {
+  transform: translate(-2px, -2px);
+  box-shadow: 8px 8px 0 #000;
+  background: #5EDDD4;
+}
+
+.neo-button:active:not(:disabled) {
+  transform: translate(2px, 2px);
+  box-shadow: 3px 3px 0 #000;
+}
+
+.neo-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.neo-button-small {
+  background: #4ECDC4;
+  color: #000;
+  border: 3px solid #000;
+  padding: 0.5rem 1rem;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  cursor: pointer;
+  box-shadow: 4px 4px 0 #000;
+  transition: all 0.2s;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.neo-button-small:hover {
+  transform: translate(-1px, -1px);
+  box-shadow: 5px 5px 0 #000;
+}
+
+.neo-button-secondary {
+  background: #FFE66D;
+  color: #000;
+  border: 4px solid #000;
+  padding: 0.75rem 1.5rem;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  cursor: pointer;
+  box-shadow: 6px 6px 0 #000;
+  transition: all 0.2s;
+}
+
+.neo-button-secondary:hover {
+  background: #FFE98D;
+  transform: translate(-2px, -2px);
+  box-shadow: 8px 8px 0 #000;
+}
+
+.neo-danger {
+  background: #FF6B6B;
+}
+
+.neo-danger:hover {
+  background: #FF8B8B;
+}
+
+.neo-liked {
+  background: #FF6B6B;
+  color: #FFF;
+}
+
+/* Inputs */
+.neo-input {
+  background: #FFF;
+  border: 4px solid #000;
+  padding: 0.75rem;
+  font-family: 'Space Mono', monospace;
+  font-size: 1rem;
+  font-weight: 700;
+  box-shadow: 4px 4px 0 #000;
+  transition: all 0.2s;
+  width: 100%;
+}
+
+.neo-input:focus {
+  outline: none;
+  transform: translate(-1px, -1px);
+  box-shadow: 5px 5px 0 #000;
+}
+
+.neo-textarea {
+  background: #FFF;
+  border: 4px solid #000;
+  padding: 0.75rem;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.95rem;
+  box-shadow: 4px 4px 0 #000;
+  transition: all 0.2s;
+  width: 100%;
+  min-height: 100px;
+  resize: vertical;
+}
+
+.neo-textarea-large {
+  background: #FFF;
+  border: 4px solid #000;
+  padding: 1rem;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.95rem;
+  box-shadow: 4px 4px 0 #000;
+  transition: all 0.2s;
+  width: 100%;
+  min-height: 400px;
+  resize: vertical;
+}
+
+.neo-textarea:focus,
+.neo-textarea-large:focus {
+  outline: none;
+  transform: translate(-1px, -1px);
+  box-shadow: 5px 5px 0 #000;
+}
+
+/* Dialog */
+.neo-dialog {
+  background: #FFE66D;
+  border: 4px solid #000;
+  box-shadow: 10px 10px 0 #000;
+  padding: 2rem;
+}
+
+/* Avatar */
+.neo-avatar {
+  width: 48px;
+  height: 48px;
+  border: 3px solid #000;
+  box-shadow: 3px 3px 0 #000;
+  background: #4ECDC4;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 1rem;
+}
+
+.neo-avatar-small {
+  width: 36px;
+  height: 36px;
+  border: 3px solid #000;
+  box-shadow: 2px 2px 0 #000;
+  background: #4ECDC4;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 0.75rem;
+}
+
+.neo-avatar-large {
+  width: 120px;
+  height: 120px;
+  border: 4px solid #000;
+  box-shadow: 6px 6px 0 #000;
+  background: #4ECDC4;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 2.5rem;
+}
+
+/* Typography */
+.pixel-title {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 2rem;
+  color: #000;
+  text-shadow: 4px 4px 0 #FF6B6B;
+  margin-bottom: 2rem;
+}
+
+.pixel-subtitle {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 1.25rem;
+  color: #000;
+  text-shadow: 3px 3px 0 #4ECDC4;
+  margin-bottom: 1.5rem;
+}
+
+.pixel-label {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 0.65rem;
+  color: #000;
+  display: block;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+}
+
+.pixel-text {
+  font-family: 'Space Mono', monospace;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #000;
+}
+
+.pixel-subtext {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.9rem;
+  color: #333;
+}
+
+.pixel-link {
+  font-family: 'Space Mono', monospace;
+  font-weight: 700;
+  color: #000;
+  text-decoration: none;
+  border-bottom: 2px solid #000;
+  transition: all 0.2s;
+}
+
+.pixel-link:hover {
+  color: #4ECDC4;
+  border-bottom: 2px solid #4ECDC4;
+}
+
+.pixel-date {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.75rem;
+  color: #666;
+}
+
+.pixel-tag {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.7rem;
+  background: #4ECDC4;
+  color: #000;
+  padding: 0.25rem 0.75rem;
+  border: 2px solid #000;
+  box-shadow: 2px 2px 0 #000;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.pixel-stat {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #000;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.pixel-username {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #000;
+}
+
+/* Article Feed */
+.article-feed {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.article-card {
+  background: #FFF;
+  border: 4px solid #000;
+  padding: 2rem;
+  box-shadow: 8px 8px 0 #000;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
+.article-card:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: 11px 11px 0 #000;
+}
+
+.article-title {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 1.25rem;
+  color: #000;
+  margin-bottom: 0.75rem;
+  line-height: 1.6;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.article-title:hover {
+  color: #FF6B6B;
+}
+
+.article-preview {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.95rem;
+  color: #333;
+  line-height: 1.6;
+  margin-top: 0.75rem;
+}
+
+/* Article Detail */
+.article-detail {
+  background: #FFF;
+  border: 4px solid #000;
+  padding: 3rem;
+  box-shadow: 10px 10px 0 #000;
+}
+
+.article-header {
+  border-bottom: 4px solid #000;
+  padding-bottom: 2rem;
+  margin-bottom: 2rem;
+}
+
+.article-detail-title {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 2rem;
+  color: #000;
+  line-height: 1.6;
+  text-shadow: 3px 3px 0 #FFE66D;
+}
+
+.article-content {
+  font-family: 'Space Mono', monospace;
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: #000;
+  margin-bottom: 2rem;
+}
+
+.article-actions {
+  border-top: 4px solid #000;
+  padding-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+/* Comments */
+.comments-section {
+  border-top: 4px solid #000;
+  padding-top: 2rem;
+  margin-top: 2rem;
+}
+
+.comment-form {
+  margin-bottom: 2rem;
+}
+
+.comments-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.comment-card {
+  background: #FFE66D;
+  border: 3px solid #000;
+  padding: 1rem;
+  box-shadow: 4px 4px 0 #000;
+}
+
+.comment-content {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.95rem;
+  color: #000;
+  margin-top: 0.5rem;
+  line-height: 1.6;
+}
+
+/* User Profile */
+.user-profile {
+  background: #FFF;
+  border: 4px solid #000;
+  padding: 3rem;
+  box-shadow: 10px 10px 0 #000;
+}
+
+.profile-header {
+  text-align: center;
+  border-bottom: 4px solid #000;
+  padding-bottom: 2rem;
+  margin-bottom: 2rem;
+}
+
+.profile-username {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 1.75rem;
+  color: #000;
+  margin: 1rem 0;
+  text-shadow: 3px 3px 0 #4ECDC4;
+}
+
+.profile-bio {
+  font-family: 'Space Mono', monospace;
+  font-size: 1rem;
+  color: #333;
+  margin-top: 0.5rem;
+}
+
+.profile-articles {
+  margin-top: 2rem;
+}
+
+/* Write Article */
+.write-article {
+  background: #FFF;
+  border: 4px solid #000;
+  padding: 3rem;
+  box-shadow: 10px 10px 0 #000;
+}
+
+/* Empty State */
+.empty-state {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: #FFF;
+  border: 4px solid #000;
+  box-shadow: 8px 8px 0 #000;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .navbar-logo {
+    font-size: 1rem;
+  }
+
+  .navbar-actions {
+    gap: 0.5rem;
+  }
+
+  .neo-button {
+    font-size: 0.6rem;
+    padding: 0.6rem 1rem;
+  }
+
+  .neo-button-small {
+    font-size: 0.65rem;
+    padding: 0.4rem 0.75rem;
+  }
+
+  .pixel-title {
+    font-size: 1.5rem;
+  }
+
+  .article-card,
+  .article-detail,
+  .user-profile,
+  .write-article {
+    padding: 1.5rem;
+  }
+
+  .main-container {
+    padding: 2rem 1rem;
+  }
+
+  .article-detail-title {
+    font-size: 1.5rem;
+  }
+}
